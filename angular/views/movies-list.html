@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <h1>Movies from 2014</h1>
+
+    <p>
+        <input type="search" class="form-control"
+               placeholder="type to filter" ng-model="query"/>
+    </p>
+
+    <p>
+        <select id=distSel ng-model="currentDistributor" ng-options="d for d in distributors" class="form-control"></select>
+
+        <!--<option value="1">Value 1</option>-->
+        <!--<option value="2">Value 2</option>-->
+    </p>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th><a ng-click="setSort('title')" href="#">Title</a></th>
+            <th><a ng-click="setSort('ratingOrdinal')" href="#">Rating</a></th>
+            <th><a ng-click="setSort('released')" href="#">Released</a></th>
+            <th><a ng-click="setSort('gross')" href="#">Gross Sales</a></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="movie in movies |
+                        filter: query |
+                        filter: {distributor: currentDistributor} |
+                        orderBy : sortCol : sortReverse">
+
+            <td><a ng-href="#/movies/{{$index}}">{{movie.title}}</a></td>
+            <td>{{movie.rating}}</td>
+            <td>{{movie.released | date : 'MMM d yyyy'}}</td>
+            <td>{{movie.gross | currency}}</td> <!-- angular filter: transformations & formatting -->
+        </tr>
+        </tbody>
+    </table>
+</body>
+</html>
