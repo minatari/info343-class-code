@@ -1,0 +1,72 @@
+/* CSS for traffic cam map page */
+
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+#searchBar {
+    text-align: center;
+    position: fixed;
+    top: 0px;
+    z-index: 1;
+    background-color: rgba(70, 65, 72, 0.8);
+    color: #FFF;
+    right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
+    min-height: 2em;
+    width: 70%;
+}
+
+#map {
+    height: 100%;
+}
+
+.trafficCam img {
+    width: 250px;
+}
+
+.trafficCam {
+    z-index: 2;
+}
+
+h1 {
+    font-size: 20px;
+}
+
+p {
+    font-size: 16px;
+}
+
+p #cameraFilter {
+    width: 70%;
+}
+
+#legend {
+    font-size: 12px;
+}
+
+#SDOTcolor {
+    font-size: 14px;
+    color: #271AE1;
+    font-weight: bold;
+}
+
+#WSDOTcolor {
+    font-size: 14px;
+    color: #D52727;
+    font-weight: bold;
+}
+
+#CounterText {
+    font-size: 13px;
+}
